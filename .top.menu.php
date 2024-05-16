@@ -8,6 +8,13 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
+		"О нас", 
+		"/o-nas/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
 		"test", 
 		"/test.php", 
 		Array(), 
