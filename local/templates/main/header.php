@@ -31,7 +31,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	<? $APPLICATION->ShowHead(); ?>
 </head>
 <body>
-<div>
+<div id="panel" >
 <?$APPLICATION->ShowPanel();?>
 </div>
 <header>
