@@ -30,33 +30,17 @@ $APPLICATION->SetTitle("О нас");
     <div class="gray_bg application_form_bl">
         <div class="standart_width">
             <div class="title">Отправить заявку</div>
-            <div class="small_standart_width">
-                <div class="application_form">
-                    <form>
-                        <div class="application_el textarea">
-                            <textarea placeholder="Вопрос или сообщение"></textarea>
-                        </div>
-                        <div class="application_el">
-                            <input type="text" placeholder="Ваше имя" />
-                        </div>
-                        <div class="application_el">
-                            <input class="error" type="email" placeholder="Email" />
-                        </div>
-                        <div class="application_el">
-                            <input class="true" type="tel" placeholder="Телефон" />
-                        </div>
-                        <div class="popup_form prava styler">
-                            <label>
-                                <input type="checkbox" />
-                                <span>Я принимаю <a href="">условия передачи данных</a></span>
-                            </label>
-                        </div>
-                        <div class="application_bt">
-                            <a class="red_bt" href="">Отправить</a>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            <? $APPLICATION->IncludeComponent(
+                "myComponents:main.feedback",
+                "feetback_forms",
+                array(
+                    "EMAIL_TO" => "stalker.karnuhov@yandex.ru",
+                    "EVENT_MESSAGE_ID" => array("7"),
+                    "OK_TEXT" => "Спасибо, ваше сообщение принято.",
+                    "REQUIRED_FIELDS" => array("NAME", "EMAIL", "MESSAGE", "PHONE"),
+                    "USE_CAPTCHA" => "N"
+                )
+            ); ?>
         </div>
     </div>
 </section>

@@ -8,8 +8,29 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
+		"Доставка", 
+		"/dostavka/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
 		"О нас", 
 		"/o-nas/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Новости", 
+		"/news.php", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Контакты", 
+		"/kontakty/", 
 		Array(), 
 		Array(), 
 		"" 
