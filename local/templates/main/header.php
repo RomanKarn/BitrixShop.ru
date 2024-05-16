@@ -30,11 +30,10 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	?>
 	<? $APPLICATION->ShowHead(); ?>
 </head>
-
-<body>
-	<div id="panel">
+<div id="panel">
 		<? $APPLICATION->ShowPanel(); ?>
 	</div>
+<body>
 	<header>
 		<div class="top_head_white_bl">
 			<div class="standart_width">
