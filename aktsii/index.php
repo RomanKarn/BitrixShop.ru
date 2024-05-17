@@ -1,7 +1,9 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Акции");
-?><?$APPLICATION->IncludeComponent("bitrix:news", "promo_list", Array(
+?>
+	<section>
+<?$APPLICATION->IncludeComponent("bitrix:news", "promo_list", Array(
 	"ADD_ELEMENT_CHAIN" => "Y",	// Включать название элемента в цепочку навигации
 		"ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
 		"AJAX_MODE" => "N",	// Включить режим AJAX
@@ -67,7 +69,7 @@ $APPLICATION->SetTitle("Акции");
 		"SEF_FOLDER" => "/aktsii/",	// Каталог ЧПУ (относительно корня сайта)
 		"SEF_MODE" => "Y",	// Включить поддержку ЧПУ
 		"SEF_URL_TEMPLATES" => array(
-			"detail" => "aktsii/#ELEMENT_ID#/",
+			"detail" => "aktsii/#ELEMENT_CODE#/",
 			"news" => "/aktsii/",
 			"section" => "",
 		),
@@ -90,4 +92,6 @@ $APPLICATION->SetTitle("Акции");
 		"USE_SHARE" => "N",	// Отображать панель соц. закладок
 	),
 	false
-);?>....<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+
+</section><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
