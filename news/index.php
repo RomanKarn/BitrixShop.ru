@@ -1,7 +1,21 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Новости");
-?><?$APPLICATION->IncludeComponent(
+?>
+<section>
+    <div class="bread_crumbs_bl">
+        <? $APPLICATION->IncludeComponent(
+            "bitrix:breadcrumb",
+            "nav_chain",
+            array(
+                "PATH" => "",    // Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
+                "SITE_ID" => "s1",    // Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
+                "START_FROM" => "0",    // Номер пункта, начиная с которого будет построена навигационная цепочка
+            ),
+            false
+        ); ?>
+    </div>
+<?$APPLICATION->IncludeComponent(
 	"bitrix:news",
 	"news_complecs",
 	Array(
@@ -43,7 +57,7 @@ $APPLICATION->SetTitle("Новости");
 		"MESSAGE_404" => "",
 		"META_DESCRIPTION" => "-",
 		"META_KEYWORDS" => "-",
-		"NEWS_COUNT" => "1",
+		"NEWS_COUNT" => "6",
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
@@ -73,4 +87,6 @@ $APPLICATION->SetTitle("Новости");
 		"USE_SEARCH" => "N",
 		"USE_SHARE" => "N"
 	)
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+</section>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
