@@ -13,9 +13,7 @@
 $this->setFrameMode(true);
 
 ?>
-<div class="white_bg">
-	<div class="standart_width">
-		<div class="title"><?=$APPLICATION->ShowTitle();?></div>
+
 		<div class="razdel_list">
 			<? foreach ($arResult["SECTIONS"] as $arItem) : ?>
 				<? if ($arItem["DEPTH_LEVEL"] <= $arResult["SECTIONS"][0]["DEPTH_LEVEL"]) : ?> <!--У по сути это работает, но не думаю что это должно делаться ТАК-->
@@ -31,6 +29,5 @@ $this->setFrameMode(true);
 				<? endif ?>
 			<? endforeach ?>
 		</div>
-	</div>
-</div>
+
 </section>
