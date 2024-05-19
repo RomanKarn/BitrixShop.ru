@@ -1,7 +1,22 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Раздел");
-?><?$APPLICATION->IncludeComponent("bitrix:catalog", "catalog_book", Array(
+$APPLICATION->AddChainItem('Раздел', '/razdel.php');
+?>
+<section>
+    <div class="bread_crumbs_bl">
+        <? $APPLICATION->IncludeComponent(
+            "bitrix:breadcrumb",
+            "nav_chain",
+            array(
+                "PATH" => "",    // Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
+                "SITE_ID" => "s1",    // Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
+                "START_FROM" => "0",    // Номер пункта, начиная с которого будет построена навигационная цепочка
+            ),
+            false
+        ); ?>
+    </div>
+<?$APPLICATION->IncludeComponent("bitrix:catalog", "catalog_book", Array(
 	"ACTION_VARIABLE" => "action",	// Название переменной, в которой передается действие
 		"ADD_ELEMENT_CHAIN" => "N",	// Включать название элемента в цепочку навигации
 		"ADD_PICT_PROP" => "-",	// Дополнительная картинка основного товара
@@ -112,7 +127,7 @@ $APPLICATION->SetTitle("Раздел");
 		"SECTIONS_SHOW_PARENT_NAME" => "Y",	// Показывать название раздела
 		"SECTIONS_VIEW_MODE" => "LIST",	// Вид списка подразделов
 		"SECTION_BACKGROUND_IMAGE" => "-",	// Установить фоновую картинку для шаблона из свойства
-		"SECTION_COUNT_ELEMENTS" => "Y",	// Показывать количество элементов в разделе
+		"SECTION_COUNT_ELEMENTS" => "N",	// Показывать количество элементов в разделе
 		"SECTION_ID_VARIABLE" => "SECTION_ID",	// Название переменной, в которой передается код группы
 		"SECTION_TOP_DEPTH" => "2",	// Максимальная отображаемая глубина разделов
 		"SEF_FOLDER" => "/catalog/",	// Каталог ЧПУ (относительно корня сайта)
@@ -163,4 +178,7 @@ $APPLICATION->SetTitle("Раздел");
 		"USE_STORE" => "N",	// Показывать блок "Количество товара на складе"
 	),
 	false
-);?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?>
+
+</section>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
