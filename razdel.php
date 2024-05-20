@@ -62,6 +62,7 @@ $APPLICATION->AddChainItem('Раздел', '/razdel.php');
 		"ELEMENT_SORT_ORDER" => "asc",
 		"ELEMENT_SORT_ORDER2" => "desc",
 		"FILTER_HIDE_ON_MOBILE" => "N",
+		"FILTER_NAME" => "",
 		"FILTER_VIEW_MODE" => "VERTICAL",
 		"IBLOCK_ID" => "4",
 		"IBLOCK_TYPE" => "catalog",
@@ -82,6 +83,7 @@ $APPLICATION->AddChainItem('Раздел', '/razdel.php');
 		"LIST_META_KEYWORDS" => "-",
 		"LIST_PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
 		"LIST_PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false}]",
+		"LIST_PROPERTY_CODE_MOBILE" => array(),
 		"LIST_SHOW_SLIDER" => "N",
 		"LIST_SLIDER_INTERVAL" => "3000",
 		"LIST_SLIDER_PROGRESS" => "N",
@@ -157,10 +159,10 @@ $APPLICATION->AddChainItem('Раздел', '/razdel.php');
 		"USE_COMPARE" => "N",
 		"USE_ELEMENT_COUNTER" => "Y",
 		"USE_ENHANCED_ECOMMERCE" => "N",
-		"USE_FILTER" => "N",
+		"USE_FILTER" => "Y",
 		"USE_MAIN_ELEMENT_SECTION" => "N",
 		"USE_PRICE_COUNT" => "N",
 		"USE_PRODUCT_QUANTITY" => "N",
 		"USE_STORE" => "N"
 	)
-);?> </section> <br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?> </section><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
