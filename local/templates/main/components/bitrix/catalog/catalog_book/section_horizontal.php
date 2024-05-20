@@ -309,8 +309,10 @@ $collSecsions = CIBlockSection::GetList(array($by => $order), ["IBLOCK_ID" => $a
 					),
 					$component
 				);
+				
 			}
 				?>
+				
 				</div>
 			</div>
 		</div>
