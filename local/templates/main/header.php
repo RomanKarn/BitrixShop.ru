@@ -31,8 +31,9 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	<? $APPLICATION->ShowHead(); ?>
 </head>
 <div id="panel">
-		<? $APPLICATION->ShowPanel(); ?>
-	</div>
+	<? $APPLICATION->ShowPanel(); ?>
+</div>
+
 <body>
 	<header>
 		<div class="top_head_white_bl">
@@ -46,7 +47,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 				</div>
 				<div class="top_head_favor_bl">
 					<div class="top_head_favor">
-						<a href="">Избранное</a><span>10</span>
+						<a href="/izbrannoe/">Избранное</a><span><?= count(json_decode($_COOKIE['favorit'])) ?></span>
 					</div>
 				</div>
 				<div class="top_head_bt"><a class="green_bt" data-fancybox data-src="#call_back" href="javascript:;">Обратный звонок</a></div>
@@ -72,12 +73,30 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 						)
 					); ?>
 				</div>
-				<div class="head_search_bl">
-					<form>
-						<input type="text" placeholder="Поиск ..." />
-						<input type="submit" value="найти" />
-					</form>
-				</div>
+				<? $APPLICATION->IncludeComponent(
+					"bitrix:search.title",
+					"search_top",
+					array(
+						"CATEGORY_0" => array(	// Ограничение области поиска
+							0 => "iblock_catalog",
+						),
+						"CATEGORY_0_TITLE" => "",	// Название категории
+						"CATEGORY_0_iblock_catalog" => array(	// Искать в информационных блоках типа "iblock_catalog"
+							0 => "4",
+						),
+						"CHECK_DATES" => "N",	// Искать только в активных по дате документах
+						"CONTAINER_ID" => "title-search",	// ID контейнера, по ширине которого будут выводиться результаты
+						"INPUT_ID" => "title-search-input",	// ID строки ввода поискового запроса
+						"NUM_CATEGORIES" => "1",	// Количество категорий поиска
+						"ORDER" => "date",	// Сортировка результатов
+						"PAGE" => "#SITE_DIR#search/",	// Страница выдачи результатов поиска (доступен макрос #SITE_DIR#)
+						"SHOW_INPUT" => "Y",	// Показывать форму ввода поискового запроса
+						"SHOW_OTHERS" => "N",	// Показывать категорию "прочее"
+						"TOP_COUNT" => "5",	// Количество результатов в каждой категории
+						"USE_LANGUAGE_GUESS" => "Y",	// Включить автоопределение раскладки клавиатуры
+					),
+					false
+				); ?>
 			</div>
 		</div>
 		<? if ($APPLICATION->GetCurpage() === "/") : ?>

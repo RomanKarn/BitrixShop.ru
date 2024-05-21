@@ -10,7 +10,7 @@ $arParams = $component->applyTemplateModifications();
 
 
 foreach ($arResult["ITEMS"] as $key => $arItem) {
-    if (!empty($arItem["PROPERTIES"]["DISCOUNT"]["VALUE"])||($arItem["PROPERTIES"]["DISCOUNT"]["VALUE"] != 0)) {
+    if (!empty($arItem["PROPERTIES"]["DISCOUNT"]["VALUE"])&&($arItem["PROPERTIES"]["DISCOUNT"]["VALUE"] != 0)) {
         $discaunt = (100 - (int)$arItem["PROPERTIES"]["DISCOUNT"]["VALUE"]) / 100;
         $finalPrise = $arItem["PRICES"]["PRISE"]["VALUE"] * $discaunt;
         $arResult["ITEMS"][$key]["PRICES"]["PRICES_WHIS_DISCOUNT"] = $finalPrise;

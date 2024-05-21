@@ -10,6 +10,8 @@ use Bitrix\Main\ModuleManager;
  * @var array $arResult
  * @var array $arCurSection
  */
+
+
 ?>
 <?
 
@@ -305,7 +307,8 @@ $collSecsions = CIBlockSection::GetList(array($by => $order), ["IBLOCK_ID" => $a
 						'USE_COMPARE_LIST' => 'Y',
 						'BACKGROUND_IMAGE' => (isset($arParams['SECTION_BACKGROUND_IMAGE']) ? $arParams['SECTION_BACKGROUND_IMAGE'] : ''),
 						'COMPATIBLE_MODE' => (isset($arParams['COMPATIBLE_MODE']) ? $arParams['COMPATIBLE_MODE'] : ''),
-						'DISABLE_INIT_JS_IN_COMPONENT' => (isset($arParams['DISABLE_INIT_JS_IN_COMPONENT']) ? $arParams['DISABLE_INIT_JS_IN_COMPONENT'] : '')
+						'DISABLE_INIT_JS_IN_COMPONENT' => (isset($arParams['DISABLE_INIT_JS_IN_COMPONENT']) ? $arParams['DISABLE_INIT_JS_IN_COMPONENT'] : ''),
+						'FAVORIT' => json_decode($_COOKIE['favorit'])
 					),
 					$component
 				);

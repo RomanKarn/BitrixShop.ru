@@ -17,8 +17,6 @@ use Bitrix\Catalog\ProductTable;
 
 $this->setFrameMode(true);
 
-
-
 ?>
 <div class="catalog_detail_bl">
 	<div class="standart_width">
@@ -70,7 +68,7 @@ $this->setFrameMode(true);
 									<div class="sale">-<?= $arResult["PROPERTIES"]["DISCOUNT"]["VALUE"] ?>%</div>
 								</div>
 							<? endif ?>
-							<a class="favor_bt active" href="">В избранное</a>
+							<a class="favor_bt <?= (in_array($arResult["ID"],$arParams["FAVORIT"]) ? 'active' : '')?>" data-id="<?=$arResult["ID"]?>" href="javascript:;">В избранное</a>
 						</div>
 						<div class="det_status_bl">
 							<div class="det_status_el green">В наличии</div>
